@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edukasi BISINDO & Simbol – IDDIRA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    .app-container {
+      max-width: 400px;
+      margin: auto;
+      min-height: 100vh;
+      background-color: #f2f4f7;
+      padding-bottom: 2rem;
+    }
+
+    .header {
+      background-color: #00796b;
+      color: white;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .card i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: #00796b;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 0.2rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (prefers-contrast: more) {
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .app-container {
+        background-color: #000;
+      }
+
+      .card {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #888;
+      }
+
+      .card i {
+        color: #00e676;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      Edukasi BISINDO & Simbol
+    </div>
+
+    <div class="section">
+      <div class="section-title">Video Bahasa Isyarat</div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/TwTQD5BrNO0" title="Video BISINDO" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="section-title">Materi Simbol Visual</div>
+      <div class="card">
+        <i class="fas fa-hand-sparkles"></i>
+        <div>
+          <div class="card-title">Simbol Pubertas</div>
+          <div class="card-desc">Mengenal tanda-tanda perubahan fisik dan simbol emosi.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-toilet"></i>
+        <div>
+          <div class="card-title">Simbol Kebersihan</div>
+          <div class="card-desc">Simbol mandi, membersihkan organ intim, dan kebiasaan sehat.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-heart"></i>
+        <div>
+          <div class="card-title">Simbol Relasi Sehat</div>
+          <div class="card-desc">Memahami simbol hubungan yang aman, nyaman, dan saling menghargai.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
