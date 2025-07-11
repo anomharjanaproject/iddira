@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transkrip Percakapan – IDDIRA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00796b;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .start {
+      background-color: #2cb3a8;
+      color: white;
+    }
+
+    .stop {
+      background-color: #e53935;
+      color: white;
+    }
+
+    .transcript {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      white-space: pre-line;
+      font-size: 1rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      text-align: center;
+      color: #666;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>🗣️ Transkrip Percakapan</h2>
+  <div class="controls">
+    <button class="start" onclick="startTranscription()">🎙️ Mulai</button>
+    <button class="stop" onclick="stopTranscription()">🛑 Hentikan</button>
+  </div>
+  <div class="transcript" id="transcript">Teks hasil percakapan akan muncul di sini...</div>
+  <div class="note">Gunakan suara jelas & perlahan • Bahasa: Indonesia</div>
+
+  <script>
+    let recognition;
+    let isRecognizing = false;
+    let finalTranscript = "";
+
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new SpeechRecognition();
+      recognition.lang = 'id-ID';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      recognition.onstart = () => {
+        isRecognizing = true;
+        console.log("Perekaman dimulai...");
+      };
+
+      recognition.onresult = (event) => {
+        let interimTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript + '\n';
+          } else {
+            interimTranscript += transcript;
+          }
+        }
+        document.getElementById('transcript').textContent = finalTranscript + interimTranscript;
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Terjadi kesalahan: ", event.error);
+      };
+
+      recognition.onend = () => {
+        isRecognizing = false;
+        console.log("Perekaman dihentikan.");
+      };
+    } else {
+      alert("Browser Anda tidak mendukung fitur ini. Gunakan Google Chrome.");
+    }
+
+    function startTranscription() {
+      if (!isRecognizing) {
+        finalTranscript = '';
+        recognition.start();
+      }
+    }
+
+    function stopTranscription() {
+      if (isRecognizing) {
+        recognition.stop();
+      }
+    }
+  </script>
+</body>
+</html>
