@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lapor Aman – IDDIRA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f2f4f7;
+      color: #000;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      min-height: 100vh;
+      background-color: #fff;
+      padding: 1.5rem;
+    }
+
+    .header {
+      background-color: #00796b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea, select, input[type="text"] {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: #006358;
+    }
+
+    .success-message {
+      background-color: #e0f7f1;
+      color: #00796b;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+      display: none;
+    }
+
+    @media (prefers-contrast: more) {
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .container {
+        background-color: #111;
+      }
+
+      .btn-submit {
+        background-color: #00e676;
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <i class="fas fa-shield-alt" aria-hidden="true"></i> Lapor Aman
+    </div>
+
+    <form id="laporForm" aria-label="Formulir Lapor Aman">
+      <div class="form-group">
+        <label for="kategori">Kategori Masalah</label>
+        <select id="kategori" name="kategori" required>
+          <option value="">-- Pilih Kategori --</option>
+          <option value="kekerasan">Kekerasan</option>
+          <option value="pelecehan">Pelecehan</option>
+          <option value="intimidasi">Intimidasi</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="lokasi">Lokasi Kejadian</label>
+        <input type="text" id="lokasi" name="lokasi" placeholder="Contoh: Sekolah, Rumah, dll." required />
+      </div>
+
+      <div class="form-group">
+        <label for="cerita">Apa yang terjadi?</label>
+        <textarea id="cerita" name="cerita" placeholder="Tulis cerita kamu di sini..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Kirim Laporan</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      <i class="fas fa-check-circle"></i> Terima kasih! Laporan kamu sudah dikirim dan akan ditindaklanjuti dengan aman.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('laporForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
