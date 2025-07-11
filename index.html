@@ -35,18 +35,20 @@
       font-weight: bold;
     }
 
-    .feature {
+    a.feature {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
       margin: 1rem;
       background-color: #ffffff;
       padding: 1rem;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
       transition: transform 0.2s;
     }
 
-    .feature:hover {
+    a.feature:hover {
       transform: scale(1.02);
       cursor: pointer;
     }
@@ -83,7 +85,7 @@
         background-color: #000;
       }
 
-      .feature {
+      a.feature {
         background-color: #222;
         color: #fff;
         border: 1px solid #888;
@@ -102,35 +104,35 @@
       <span class="sr-only">Aplikasi Edukasi Kesehatan Ramah Disabilitas</span>
     </div>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="lapor.html">
       <i class="fas fa-shield-alt" aria-hidden="true"></i>
       <span class="feature-title">Lapor Aman</span>
-    </div>
+    </a>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="edukasi.html">
       <i class="fas fa-sign-language" aria-hidden="true"></i>
       <span class="feature-title">Edukasi BISINDO & Simbol</span>
-    </div>
+    </a>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="video.html">
       <i class="fas fa-photo-video" aria-hidden="true"></i>
       <span class="feature-title">Video & Infografik</span>
-    </div>
+    </a>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="tts.html">
       <i class="fas fa-volume-up" aria-hidden="true"></i>
       <span class="feature-title">Text-to-Speech</span>
-    </div>
+    </a>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="konseling.html">
       <i class="fas fa-comments" aria-hidden="true"></i>
       <span class="feature-title">Konseling & Curhat Aman</span>
-    </div>
+    </a>
 
-    <div class="feature" role="button" tabindex="0">
+    <a class="feature" href="kontras.html">
       <i class="fas fa-low-vision" aria-hidden="true"></i>
       <span class="feature-title">Mode Kontras Tinggi</span>
-    </div>
+    </a>
   </div>
 </body>
 </html>
