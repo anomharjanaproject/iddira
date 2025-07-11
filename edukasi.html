@@ -3,150 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Edukasi BISINDO & Simbol – IDDIRA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>IDDIRA – Bahasa Isyarat ke Suara</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
-      margin: 0;
-      background-color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      background: #f9fafa;
       color: #000;
-    }
-
-    .app-container {
-      max-width: 400px;
+      padding: 1rem;
+      max-width: 700px;
       margin: auto;
-      min-height: 100vh;
-      background-color: #f2f4f7;
-      padding-bottom: 2rem;
     }
 
-    .header {
-      background-color: #00796b;
-      color: white;
-      padding: 1rem 1.5rem;
+    h2 {
       text-align: center;
-      font-size: 1.4rem;
+      color: #00695c;
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .icon {
+      text-align: center;
+      cursor: pointer;
+      width: 90px;
+    }
+
+    .icon img {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .icon:hover img {
+      border-color: #26a69a;
+    }
+
+    .text-output {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 1.5rem 0;
+      min-height: 40px;
       font-weight: bold;
     }
 
-    .section {
-      padding: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .card {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-    }
-
-    .card i {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      color: #00796b;
-    }
-
-    .card-title {
-      font-weight: 600;
+    .speak-btn {
+      display: block;
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem;
       font-size: 1rem;
+      background-color: #26a69a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    .card-desc {
-      font-size: 0.9rem;
-      color: #333;
-      margin-top: 0.2rem;
+    .speak-btn:hover {
+      background-color: #1e8e81;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    @media (prefers-contrast: more) {
-      body {
-        background-color: #000;
-        color: #fff;
-      }
-
-      .app-container {
-        background-color: #000;
-      }
-
-      .card {
-        background-color: #222;
-        color: #fff;
-        border: 1px solid #888;
-      }
-
-      .card i {
-        color: #00e676;
-      }
+    .note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <div class="header">
-      Edukasi BISINDO & Simbol
+
+  <h2>🧏 Bahasa Isyarat ➜ Teks ➜ Suara</h2>
+
+  <div class="icons">
+    <div class="icon" onclick="setSpeech('Saya sedang menstruasi.')">
+      <img src="https://img.icons8.com/fluency/96/sanitary-pad.png" alt="Menstruasi">
+      <div>Menstruasi</div>
     </div>
-
-    <div class="section">
-      <div class="section-title">Video Bahasa Isyarat</div>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/TwTQD5BrNO0" title="Video BISINDO" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="section-title">Materi Simbol Visual</div>
-      <div class="card">
-        <i class="fas fa-hand-sparkles"></i>
-        <div>
-          <div class="card-title">Simbol Pubertas</div>
-          <div class="card-desc">Mengenal tanda-tanda perubahan fisik dan simbol emosi.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-toilet"></i>
-        <div>
-          <div class="card-title">Simbol Kebersihan</div>
-          <div class="card-desc">Simbol mandi, membersihkan organ intim, dan kebiasaan sehat.</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <i class="fas fa-heart"></i>
-        <div>
-          <div class="card-title">Simbol Relasi Sehat</div>
-          <div class="card-desc">Memahami simbol hubungan yang aman, nyaman, dan saling menghargai.</div>
-        </div>
-      </div>
+    <div class="icon" onclick="setSpeech('Saya merasa sakit perut.')">
+      <img src="https://img.icons8.com/fluency/96/stomachache.png" alt="Sakit Perut">
+      <div>Sakit Perut</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya ingin bertanya.')">
+      <img src="https://img.icons8.com/fluency/96/ask-question.png" alt="Tanya">
+      <div>Tanya</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya ingin bicara dengan konselor.')">
+      <img src="https://img.icons8.com/fluency/96/online-support.png" alt="Konselor">
+      <div>Konselor</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya lapar, ingin makan.')">
+      <img src="https://img.icons8.com/fluency/96/meal.png" alt="Makan">
+      <div>Makan</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya haus, ingin minum.')">
+      <img src="https://img.icons8.com/fluency/96/water-bottle.png" alt="Minum">
+      <div>Minum</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya merasa senang.')">
+      <img src="https://img.icons8.com/fluency/96/happy.png" alt="Senang">
+      <div>Senang</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Saya merasa sedih.')">
+      <img src="https://img.icons8.com/fluency/96/sad.png" alt="Sedih">
+      <div>Sedih</div>
+    </div>
+    <div class="icon" onclick="setSpeech('Terima kasih.')">
+      <img src="https://img.icons8.com/fluency/96/handshake.png" alt="Terima Kasih">
+      <div>Terima Kasih</div>
     </div>
   </div>
+
+  <div class="text-output" id="outputText">...</div>
+  <button class="speak-btn" onclick="speakText()">🔊 Bacakan</button>
+
+  <div class="note">Pilih ikon untuk menampilkan teks dan mendengar suara Bahasa Indonesia</div>
+
+  <script>
+    let currentSentence = "";
+
+    function setSpeech(sentence) {
+      currentSentence = sentence;
+      document.getElementById("outputText").textContent = sentence;
+    }
+
+    function speakText() {
+      if (!currentSentence) {
+        alert("Silakan pilih ikon terlebih dahulu.");
+        return;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(currentSentence);
+      utterance.lang = "id-ID";
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+
 </body>
 </html>
