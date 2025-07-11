@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IDDIRA – Bahasa Isyarat ke Suara</title>
+
+  <!-- Font Awesome 6.5.0 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -33,16 +37,18 @@
       width: 90px;
     }
 
-    .icon img {
-      width: 72px;
-      height: 72px;
+    .icon i {
+      font-size: 48px;
+      color: #26a69a;
+      background-color: #e0f2f1;
       border-radius: 12px;
-      border: 2px solid transparent;
+      padding: 16px;
+      margin-bottom: 8px;
       transition: 0.3s;
     }
 
-    .icon:hover img {
-      border-color: #26a69a;
+    .icon:hover i {
+      background-color: #b2dfdb;
     }
 
     .text-output {
@@ -83,39 +89,39 @@
 
   <div class="icons">
     <div class="icon" onclick="setSpeech('Saya sedang menstruasi.')">
-      <img src="https://img.icons8.com/fluency/96/sanitary-pad.png" alt="Menstruasi">
+      <i class="fas fa-droplet"></i>
       <div>Menstruasi</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya merasa sakit perut.')">
-      <img src="https://img.icons8.com/fluency/96/stomachache.png" alt="Sakit Perut">
+      <i class="fas fa-heartbeat"></i>
       <div>Sakit Perut</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya ingin bertanya.')">
-      <img src="https://img.icons8.com/fluency/96/ask-question.png" alt="Tanya">
+      <i class="fas fa-question-circle"></i>
       <div>Tanya</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya ingin bicara dengan konselor.')">
-      <img src="https://img.icons8.com/fluency/96/online-support.png" alt="Konselor">
+      <i class="fas fa-user-md"></i>
       <div>Konselor</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya lapar, ingin makan.')">
-      <img src="https://img.icons8.com/fluency/96/meal.png" alt="Makan">
+      <i class="fas fa-utensils"></i>
       <div>Makan</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya haus, ingin minum.')">
-      <img src="https://img.icons8.com/fluency/96/water-bottle.png" alt="Minum">
+      <i class="fas fa-glass-water"></i>
       <div>Minum</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya merasa senang.')">
-      <img src="https://img.icons8.com/fluency/96/happy.png" alt="Senang">
+      <i class="fas fa-face-smile"></i>
       <div>Senang</div>
     </div>
     <div class="icon" onclick="setSpeech('Saya merasa sedih.')">
-      <img src="https://img.icons8.com/fluency/96/sad.png" alt="Sedih">
+      <i class="fas fa-face-sad-tear"></i>
       <div>Sedih</div>
     </div>
     <div class="icon" onclick="setSpeech('Terima kasih.')">
-      <img src="https://img.icons8.com/fluency/96/handshake.png" alt="Terima Kasih">
+      <i class="fas fa-handshake"></i>
       <div>Terima Kasih</div>
     </div>
   </div>
