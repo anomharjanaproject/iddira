@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IDDIRA – Edukasi Ramah Disabilitas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    .app-container {
+      max-width: 400px;
+      margin: auto;
+      min-height: 100vh;
+      background-color: #f2f4f7;
+      padding-bottom: 2rem;
+    }
+
+    .header {
+      background-color: #00796b;
+      color: white;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .feature {
+      margin: 1rem;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+
+    .feature:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    .feature i {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: #00796b;
+    }
+
+    .feature-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-contrast: more) {
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .app-container {
+        background-color: #000;
+      }
+
+      .feature {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #888;
+      }
+
+      .feature i {
+        color: #00e676;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="header" role="banner">
+      🍏 IDDIRA
+      <span class="sr-only">Aplikasi Edukasi Kesehatan Ramah Disabilitas</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-shield-alt" aria-hidden="true"></i>
+      <span class="feature-title">Lapor Aman</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-sign-language" aria-hidden="true"></i>
+      <span class="feature-title">Edukasi BISINDO & Simbol</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-photo-video" aria-hidden="true"></i>
+      <span class="feature-title">Video & Infografik</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-volume-up" aria-hidden="true"></i>
+      <span class="feature-title">Text-to-Speech</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-comments" aria-hidden="true"></i>
+      <span class="feature-title">Konseling & Curhat Aman</span>
+    </div>
+
+    <div class="feature" role="button" tabindex="0">
+      <i class="fas fa-low-vision" aria-hidden="true"></i>
+      <span class="feature-title">Mode Kontras Tinggi</span>
+    </div>
+  </div>
+</body>
+</html>
