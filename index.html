@@ -19,20 +19,48 @@
     }
 
     .app-container {
-      max-width: 400px;
+      max-width: 420px;
       margin: auto;
       min-height: 100vh;
       background-color: #f2f4f7;
       padding-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
     }
 
     .header {
       background-color: #00796b;
-      color: white;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
+    }
+
+    .header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Efek hover: zoom + floating */
+    .header img:hover {
+      transform: scale(1.15) translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    /* Efek klik: bounce */
+    .header img:active {
+      animation: bounceClick 0.4s;
+    }
+
+    @keyframes bounceClick {
+      0%   { transform: scale(1) translateY(0); }
+      30%  { transform: scale(0.9) translateY(3px); }
+      60%  { transform: scale(1.1) translateY(-4px); }
+      100% { transform: scale(1) translateY(0); }
     }
 
     a.feature {
@@ -45,18 +73,27 @@
       padding: 1rem;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      transition: all 0.3s ease;
+      transform: translateY(0);
     }
 
     a.feature:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px) scale(1.03);
+      background-color: #e0f2f1;
       cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .feature i {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-right: 1rem;
       color: #00796b;
+      transition: transform 0.3s ease;
+    }
+
+    a.feature:hover i {
+      transform: rotate(-10deg) scale(1.2);
+      color: #004d40;
     }
 
     .feature-title {
@@ -75,32 +112,51 @@
       border: 0;
     }
 
-    @media (prefers-contrast: more) {
-      body {
-        background-color: #000;
-        color: #fff;
-      }
+    /* Popup animasi */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 2s;
+    }
 
-      .app-container {
-        background-color: #000;
-      }
+    .popup img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      animation: bounce 2s infinite;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
 
-      a.feature {
-        background-color: #222;
-        color: #fff;
-        border: 1px solid #888;
-      }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
 
-      .feature i {
-        color: #00e676;
-      }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
+  <!-- Popup Logo -->
+  <div class="popup">
+    <img src="https://res.cloudinary.com/djexglfns/image/upload/v1755440562/WhatsApp_Image_2025-08-04_at_12.14.44_PM_yp1fn5.jpg" alt="Logo IDDIRA">
+  </div>
+
   <div class="app-container">
     <div class="header" role="banner">
-      🍏 IDDIRA
+      <img src="https://res.cloudinary.com/djexglfns/image/upload/v1755440562/WhatsApp_Image_2025-08-04_at_12.14.44_PM_yp1fn5.jpg" alt="Logo IDDIRA">
       <span class="sr-only">Aplikasi Edukasi Kesehatan Ramah Disabilitas</span>
     </div>
 
@@ -127,11 +183,6 @@
     <a class="feature" href="konseling.html">
       <i class="fas fa-comments" aria-hidden="true"></i>
       <span class="feature-title">Konseling & Curhat Aman</span>
-    </a>
-
-    <a class="feature" href="kontras.html">
-      <i class="fas fa-low-vision" aria-hidden="true"></i>
-      <span class="feature-title">Mode Kontras Tinggi</span>
     </a>
   </div>
 </body>
